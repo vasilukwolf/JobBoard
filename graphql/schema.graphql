@@ -10,6 +10,7 @@ type Query {
   user(id: ID @eq): User @find
 
   tags:[Tag!]! @all
+  tag(slug: String! @eq): Tag @find
 }
 
 type Tag{
