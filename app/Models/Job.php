@@ -18,12 +18,12 @@ class Job extends Model
     'user_id'
   ];
 
-  public function tags() : BelongsToMany
+  public function tags()
   {
     return $this->belongsToMany(Tag::class);
   }
 
-  public function user() : BelongsTo
+  public function user()
   {
     return $this->belongsTo(User::class);
   }
