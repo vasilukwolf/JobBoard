@@ -84,7 +84,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Fallback Locale
+    | Application Fallback Localefestival
     |--------------------------------------------------------------------------
     |
     | The fallback locale determines the locale to use when the current one
@@ -174,7 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        \Nuwave\Lighthouse\WhereConditions\WhereConditionsServiceProvider::class,
     ],
 
     /*
