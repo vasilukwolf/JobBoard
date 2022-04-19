@@ -13,6 +13,7 @@ type Query {
   tag(slug: String! @eq): Tag @find
 
   jobs(orderBy: _ @orderBy(columns:["created_at","job_title"])):[Job!]! @all
+
 }
 
 type Tag  {
