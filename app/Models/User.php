@@ -15,7 +15,8 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array<int, string>AT
+
      */
     protected $fillable = [
         'name',
@@ -41,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function jobs()
+    {
+      return $this->hasMany(Job::class);
+    }
 }

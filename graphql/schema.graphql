@@ -11,31 +11,34 @@ type Query {
 
   tags:[Tag!]! @all
   tag(slug: String! @eq): Tag @find
+
+  jobs:[Job!]! @all
 }
 
-type Tag{
+type Tag  {
     id: ID!
     title: String!
     slug: String!
 }
 
-"Account of a person who utilizes this application."
 type User {
-    "Unique primary key."
     id: ID!
-
-    "Non-unique name."
     name: String!
-
-    "Unique email address."
     email: String!
-
-    "When the email was verified."
     email_verified_at: DateTime
-
-    "When the account was created."
     created_at: DateTime!
-
-    "When the account was last updated."
     updated_at: DateTime!
+}
+
+type Job {
+    id: ID!
+    job_title: String!
+    job_location: String!
+    job_link: String!
+    company_name: String!
+    company_logo: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    tags: [Tag!]! @belongsToMany
+    user: User! @belongsTo
 }
